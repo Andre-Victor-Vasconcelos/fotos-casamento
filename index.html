@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Casamento | Galeria de Fotos</title>
+    
+    <!-- Importando fontes bonitas e elegantes do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* ================= CSS (ESTILOS E DESIGN) ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #faf8f5; /* Um tom bem suave de off-white/bege */
+            color: #333;
+        }
+
+        /* Seção de Cabeçalho (Hero) */
+        header {
+            /* Substitua a URL abaixo pela sua foto principal do casamento */
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* Galeria de Fotos */
+        .gallery-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .gallery-container h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #5a4b41;
+        }
+
+        .gallery-container p.subtitle {
+            margin-bottom: 40px;
+            color: #777;
+            font-style: italic;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover; /* Faz a foto se adaptar sem distorcer */
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Efeito ao passar o mouse na foto */
+        .gallery img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #5a4b41;
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+        }
+
+        /* Lightbox (Visualizador de Imagem em Tela Cheia) */
+        .lightbox {
+            display: none; /* Escondido por padrão */
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #ccc;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Responsividade para celulares */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            header p { font-size: 1rem; }
+            .gallery { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= HTML (ESTRUTURA) ================= -->
+
+    <!-- Cabeçalho Principal -->
+    <header>
+        <!-- Troque os nomes abaixo -->
+        <h1>Seu Nome & Amor</h1>
+        <p>Nosso Felizes para Sempre • Data do Casamento</p>
+    </header>
+
+    <!-- Seção da Galeria -->
+    <main class="gallery-container">
+        <h2>Nossas Lembranças</h2>
+        <p class="subtitle">Clique nas fotos para ampliar e reviver esse dia mágico conosco.</p>
+        
+        <div class="gallery">
+            <!-- 
+                COMO ADICIONAR SUAS FOTOS:
+                Altere o atributo src="" para o nome da sua foto.
+                Exemplo: src="foto1.jpg"
+                Abaixo coloquei algumas fotos de exemplo da internet para você ver como fica.
+            -->
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop" alt="Foto Casamento 1">
+            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=800&auto=format&fit=crop" alt="Foto Casamento 2">
+            <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=800&auto=format&fit=crop" alt="Foto Casamento 3">
+            <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=800&auto=format&fit=crop" alt="Foto Casamento 4">
+            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop" alt="Foto Casamento 5">
+            <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=800&auto=format&fit=crop" alt="Foto Casamento 6">
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>Obrigado por fazer parte da nossa história! ♥</p>
+    </footer>
+
+    <!-- Estrutura do Lightbox (Escondida) -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-btn" id="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="Foto Ampliada">
+    </div>
+
+    <!-- ================= JAVASCRIPT (INTERAÇÃO) ================= -->
+    <script>
+        // Pega os elementos necessários
+        const galleryImages = document.querySelectorAll('.gallery img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('close-btn');
+
+        // Função para abrir o lightbox
+        galleryImages.forEach(image => {
+            image.addEventListener('click', () => {
+                lightbox.style.display = 'flex'; // Mostra a tela preta
+                lightboxImg.src = image.src; // Coloca a foto clicada no telão
+            });
+        });
+
+        // Função para fechar clicando no 'X'
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        // Função para fechar clicando fora da imagem
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
